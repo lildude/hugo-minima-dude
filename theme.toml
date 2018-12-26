@@ -1,0 +1,22 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "Hugo Minima Dude"
+license = "MIT"
+licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
+description = "A colourful and simple Hugo theme, based on the Jekyll Minima theme, but with a bit more colour and more functionality with support for different post types."
+homepage = "https://github.com/lildude/hugo-minima-dude"
+tags = ["blog", "minimal", "colourful"]
+features = []
+min_version = "0.32"
+
+[author]
+  name = "Colin Seymour"
+  homepage = "https://lildude.co.uk"
+
+# If porting an existing theme
+[original]
+  author = "Colin Seymour"
+  name = "minima-dude"
+  homepage = "https://lildude.co.uk"
+  repo = "https://github.com/lildude/minima-dude"
