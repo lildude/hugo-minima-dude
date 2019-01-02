@@ -1,0 +1,3 @@
+{{ $script := resources.Get "js/site.js" | minify }}
+
+<script src="{{ $script.Permalink }}"></script>

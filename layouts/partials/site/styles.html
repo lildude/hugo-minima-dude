@@ -1,0 +1,4 @@
+{{ $options := (dict "outputStyle" "compressed" "enableSourceMap" true "includePaths" (slice "sass/minima_dude")) }}
+{{ $style := resources.Get "sass/site.scss" | toCSS $options | minify | fingerprint }}
+
+<link rel="stylesheet" href="{{ $style.Permalink }}" />
