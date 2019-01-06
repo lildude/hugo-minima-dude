@@ -1,5 +1,8 @@
 // Import partials.
 @import
+  {{ if .Site.Params.whackwhack }}
+  "minima_dude/whack",
+  {{ end }}
   "minima_dude/variables",
   "minima_dude/base",
   "minima_dude/layout",
