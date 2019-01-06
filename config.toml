@@ -1,2 +1,23 @@
 # Add this content to your site's config.toml file
 languageCode = "en-gb"
+title = "My site title"
+author = "Your Name"
+sectionPagesMenu = "main"
+summaryLength = 100
+[taxonomies]
+   tag = "tags"
+
+[params]
+description = "My site description"
+whackwhack = true
+strava = "1234567"
+parkrun = "A12345"
+powerof10 = "123456"
+github = "handle"
+twitter = "handle"
+
+[outputs]
+home = ["HTML", "RSS"]
+
+[outputFormats.RSS]
+  baseName = "atom"
