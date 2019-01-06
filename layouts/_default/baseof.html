@@ -19,10 +19,10 @@
 
         {{ block "header" . }}{{ partial "site/header.html" . }}{{ end }}
 
-        <main class="site-main" role="main">
-
-            {{ block "main" . }}{{ end }}
-
+        <main class="page-content" role="main" aria-label="Content">
+            <div class="wrapper">
+                {{ block "main" . }}{{ end }}
+            </div>
         </main>
 
         {{ block "footer" . }}{{ partial "site/footer.html" . }}{{ end }}
