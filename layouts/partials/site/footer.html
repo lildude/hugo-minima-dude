@@ -1,7 +1,20 @@
-<footer class="site-footer" role="contentinfo">
+<footer class="site-footer">
 
-  <p class="site-footer__copyright">
-      &copy; {{ now.Format "2006" }} &middot; <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-  </p>
+  <div class="wrapper">
+        <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <h2 class="footer-heading">{{ .Site.Title }}</h2>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        {{ partial "site/social" . }}
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{ .Site.Params.description }}</p>
+      </div>
+    </div>
+  </div>
 
 </footer>
+

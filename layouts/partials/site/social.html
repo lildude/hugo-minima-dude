@@ -1,0 +1,59 @@
+<ul class="social-media-list">
+{{ with $.Site.Params.strava }}
+{{ $file := resources.Get "img/icon-strava.svg" | minify }}
+<li>
+  <a href="http://strava.com/athletes/{{ $.Site.Params.strava }}" title="Strava">
+    <span class="icon icon--strava">{{ $file.Content | safeHTML }}</span>
+    <span class="username">{{ $.Site.Params.strava }}</span>
+  </a>
+</li>
+{{ end }}
+
+{{ with $.Site.Params.parkrun }}
+{{ $file := resources.Get "img/icon-parkrun.svg" | minify }}
+<li>
+  <a href="https://www.parkrun.org.uk/results/athleteresultshistory/?athleteNumber={{ $.Site.Params.parkrun }}" title="parkrun">
+    <span class="icon icon--parkrun">{{ $file.Content | safeHTML }}</span>
+    <span class="username">{{ $.Site.Params.strava }}</span>
+  </a>
+</li>
+{{ end }}
+
+{{ with $.Site.Params.powerof10 }}
+{{ $file := resources.Get "img/icon-powerof10.svg" }}
+<li>
+  <a href="http://www.thepowerof10.info/athletes/profile.aspx?athleteid={{ $.Site.Params.powerof10 }}" title="PowerOf10">
+    <span class="icon icon--powerof10">{{ $file.Content | safeHTML }}</span>
+    <span class="username">{{ $.Site.Params.powerof10 }}</span>
+  </a>
+</li>
+{{ end }}
+
+{{ with $.Site.Params.github }}
+{{ $file := resources.Get "img/icon-github.svg" | minify }}
+<li>
+  <a href="https://github.com/{{ $.Site.Params.github }}" title="{{ $.Site.Params.github }} on GitHub">
+    <span class="icon icon--github">{{ $file.Content | safeHTML }}</span>
+    <span class="username">{{ $.Site.Params.github }}</span>
+  </a>
+</li>
+{{ end }}
+
+{{ with $.Site.Params.twitter }}
+{{ $file := resources.Get "img/icon-twitter.svg" | minify }}
+<li>
+  <a href="https://twitter.com/{{ $.Site.Params.twitter }}" title="@{{ $.Site.Params.twitter }} on Twitter">
+    <span class="icon icon--twitter">{{ $file.Content | safeHTML }}</span>
+    <span class="username">{{ $.Site.Params.twitter }}</span>
+  </a>
+</li>
+{{ end }}
+
+{{ $file := resources.Get "img/icon-feed.svg" | minify }}
+<li>
+  <a href="/atom.xml" title="Atom Feed">
+    <span class="icon icon--feed">{{ $file.Content | safeHTML }}</span>
+    <span class="username">Atom Feed</span>
+  </a>
+</li>
+</ul>
