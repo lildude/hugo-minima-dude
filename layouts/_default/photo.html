@@ -1,0 +1,28 @@
+{{ define "main" }}
+
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <div class="post-content center" itemprop="articleBody">
+    <div class="micropub_photo photo">
+    {{ .Content }}
+    {{ with .Params.instagram_url }}
+    {{ $file := resources.Get "img/icon-instagram.svg" | minify }}
+    <a class="photo_url icon" href="{{ . }}" style="visibility: visible">{{ $file.Content | safeHTML }}</a>
+    {{ end }}
+    </div>
+  </div>
+
+  <p class="post-meta">
+  — <time datetime="{{ .Date.Format "2006-01-02T15:04:05+07:00" }}" itemprop="datePublished">
+  {{ .Date.Format "2 Jan 2006" }}
+  </time>
+  {{ $taxonomy := "tags" }}
+  {{ with .Param $taxonomy }}
+  {{ $tags := delimit . ", " }}
+  •  {{ $tags }}
+  {{ end }}
+  </p>
+
+</article>
+
+{{ end }}
