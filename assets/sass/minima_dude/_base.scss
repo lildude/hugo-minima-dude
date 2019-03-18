@@ -317,9 +317,9 @@ iframe {
 }
 
 /**
- * Micropub photos
+ * Photo posts
  */
-.micropub_photo {
+.photo {
   text-align: center;
   .photo_url {
     visibility: hidden;
@@ -332,7 +332,7 @@ iframe {
   }
 }
 
-.micropub_note {
+.note {
   p:last-of-type {
     display: inline;
   }
