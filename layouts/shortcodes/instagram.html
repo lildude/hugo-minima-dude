@@ -1,0 +1,11 @@
+{{ $altText := .Get "alt"}}
+{{ $src := .Get "src" }}
+{{ with .Site.GetPage "section" "img" }}
+  {{ with .Resources.GetMatch $src }}
+    <img srcset="
+      {{ (.Resize "320x q80").RelPermalink }} 320w,
+      {{ (.Resize "640x q80").RelPermalink }} 640w,
+      {{ (.Resize "1024x q100").RelPermalink }} 1x"
+    src="{{ (.Resize "640x q80").RelPermalink }}" alt="{{$altText}}"/>
+  {{ end }}
+{{ end }}
