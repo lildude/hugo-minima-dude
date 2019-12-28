@@ -2,7 +2,7 @@
 <html lang="{{ .Site.LanguageCode | default "en" }}">
     <head>
 
-        {{ block "site/meta" . }}{{ partial "site/meta.html" . }}{{ end }}
+        {{ block "site/meta" . }}{{ partial "site/meta.html" }}{{ end }}
 
         <title>{{ block "title" . }}
             {{- with .Title }}{{ . }} | {{ end }}{{ .Site.Title -}}
@@ -21,7 +21,16 @@
 
         <main class="page-content" role="main" aria-label="Content">
             <div class="wrapper">
-                {{ block "main" . }}{{ end }}
+            {{ block "main" . }}{{ end }}
+            <!-- debugging -->
+            {{ $posts := first 10 (( where .Site.RegularPages "Type" "post" ).GroupByDate "2 Jan 2006") -}}
+            {{ printf "%#v" $posts }}
+                {{ range $posts -}}
+                    <li>{{ .Key }} - {{ .Pages.Len }}</li>
+                    {{ range .Pages }}
+                        <p>{{ .Title }}</p>
+                    {{ end }}
+                {{ end }}
             </div>
         </main>
 
