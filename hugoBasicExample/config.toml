@@ -1,0 +1,37 @@
+baseurl = "https://gohugo.io/"
+title = "Gone For A Run"
+copyright = "Copyright © 2008–2018, Steve Francia and the Hugo Authors; all rights reserved."
+canonifyurls = true
+paginate = 10
+languageCode = "en-gb"
+sectionPagesMenu = "main"
+summaryLength = 100
+theme = "hugo-minima-dude"
+disablePathToLower = true
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[permalinks]
+  post = "/:title/"
+
+[author]
+  name = "Lildude Rocks"
+
+[params]
+  description = "This is a & cool site."
+  whackwhack = true
+  author = "Steve Francia"
+  strava = "1234567"
+  parkrun = "A12345"
+  powerof10 = "123456"
+  #github = "lildude"
+  twitter = "lildude"
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[outputFormats.RSS]
+  baseName = "atom"
+
+[blackfriday]
+  hrefTargetBlank = true # open the external links in a new window
+  fractions = true  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
